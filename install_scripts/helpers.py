@@ -10,7 +10,7 @@ from flask import request
 
 from . import db
 
-_default_docker_version = '17.06.2'
+_default_docker_version = '17.12.1'
 
 
 def template_args(**kwargs):
@@ -57,11 +57,12 @@ def get_pinned_docker_version(replicated_version, scheduler):
 
     if docker_version == 'default':
         return get_default_docker_version()  #fall back to this if default
-    else:
-        return docker_version
+    return docker_version
+
 
 def get_pinned_kubernetes_version(replicated_version):
     return "v1.9.3"
+
 
 def get_default_docker_version():
     return os.getenv('PINNED_DOCKER_VERSION', _default_docker_version)
