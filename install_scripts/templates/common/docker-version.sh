@@ -144,16 +144,16 @@ getMaxDockerVersion() {
             MAX_DOCKER_VERSION_RESULT="1.9.1"
         fi
     fi
-    # Max Docker version on SUSE Linux Enterprise Server 12 is 17.09.1.
-    if [ "$LSB_DIST" = "sles" ]; then
-        if [ "$DIST_VERSION_MAJOR" = "12" ]; then
-            MAX_DOCKER_VERSION_RESULT="17.09.1"
-        fi
-    fi
     # Max Docker version on Amazon Linux 2 is 17.06.2.
     if [ "$LSB_DIST" = "amzn" ]; then
         if [ "$DIST_VERSION_MAJOR" = "2" ]; then
             MAX_DOCKER_VERSION_RESULT="17.06.2"
+        fi
+    fi
+    # Max Docker version on SUSE Linux Enterprise Server 12 is 17.09.1.
+    if [ "$LSB_DIST" = "sles" ]; then
+        if [ "$DIST_VERSION_MAJOR" = "12" ]; then
+            MAX_DOCKER_VERSION_RESULT="17.09.1"
         fi
     fi
 }
