@@ -264,7 +264,7 @@ def get_docker_rpm_pkg_version(docker_version, lsb_dist, dist_version):
             return '{}-1.el${{dist_version}}'.format(docker_version)
         return '{}-1.el${{dist_version}}.centos'.format(docker_version)
     elif major == 17:
-        if lsb_dist == 'ol' and minor <= 3:
+        if lsb_dist == 'ol' and minor <= 5:
             return '{}.ce-1.el${{dist_version}}'.format(docker_version)
         return '{}.ce-1.el${{dist_version}}.centos'.format(docker_version)
     # if docker version is unknown lets just return default version

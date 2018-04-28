@@ -156,4 +156,10 @@ getMaxDockerVersion() {
             MAX_DOCKER_VERSION_RESULT="17.09.1"
         fi
     fi
+    # Max Docker version on Oracle Linux 6.x seems to be 17.05.0.
+    if [ "$LSB_DIST" = "ol" ]; then
+        if [ "$DIST_VERSION_MAJOR" = "6" ]; then
+            MAX_DOCKER_VERSION_RESULT="17.05.0"
+        fi
+    fi
 }
